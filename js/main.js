@@ -82,12 +82,14 @@ var mostrarResultados = function(resultados){
     //console.log(resultados.id)
     var resultadoBusqueda = $("#modalBusqueda")
     plantillaFinal = "";
-    plantillaFinal += plantillaFiltrados.replace("__idTema__",resultados.id)
-    .replace("__id__",resultados.id)
-    .replace("__contenido__",resultados.content)
-    .replace("__autor__",resultados.author_name)
-    .replace("__respuestas__",resultados.responses_count);
-    resultadoBusqueda.html(plantillaFinal);
+    resultados.forEach(function(resultado){
+        plantillaFinal += plantillaFiltrados.replace("__idTema__",resultado.id)
+        .replace("__id__",resultado.id)
+        .replace("__contenido__",resultado.content)
+        .replace("__autor__",resultado.author_name)
+        .replace("__respuestas__",resultado.responses_count);  
+    });    
+    $contenedorTemas.html(plantillaFinal);
 };
 
 $(document).ready(cargarPagina);
