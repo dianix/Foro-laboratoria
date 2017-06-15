@@ -12,7 +12,7 @@ var cargarPagina = function () {
     cargarTema();
 };
 
-var 
+
 var cargarTema = function () {
     //obteniendo tema de la api
     //console.log(topicId)
@@ -21,14 +21,15 @@ var cargarTema = function () {
         console.log(tema)
         var contenido = tema.content;
         var autor = tema.author_name;
+        obtenerRespuestas()
     });
 }
 
 var obtenerRespuestas = function(){
-    $.getJSON(, function (tema) {
-        console.log(tema)
-        var contenido = tema.content;
-        var autor = tema.author_name;
+    var apiRespuestas = apiTema+"/responses";
+    $.getJSON(apiRespuestas, function (respuestas) {
+        console.log(respuestas)
+        
     });
 }
 
