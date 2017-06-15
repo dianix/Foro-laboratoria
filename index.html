@@ -10,13 +10,13 @@
 </head>
 
 <body>
-<nav class="navbar fixed-top navbar-inverse bg-primary">
-    <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro taShidotuKoto</a>
-    <form id="filtrarTemas" class="form-inline pull-right">
-        <input id="temaBusqueda" class="form-control mr-sm-2" type="text" placeholder="Buscar Tema">
-        <button class="btn btn-info my-2 my-sm-0" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-    </form>
-</nav>
+    <nav class="navbar fixed-top navbar-inverse bg-primary">
+        <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro taShidotuKoto</a>
+        <form id="filtrarTemas" class="form-inline pull-right">
+            <input id="temaBusqueda" class="form-control mr-sm-2" type="text" placeholder="Buscar Tema">
+            <button class="btn btn-info my-2 my-sm-0" type="submit" data-toggle="modal" data-target="#modalBusqueda"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </form>
+    </nav>
     <main class="container center">
         <h1 class="text-center t-morado"><b>Estos son todos los temas</b></h1>
         <!-- Botón para llamar al modal de nuevo tema -->
@@ -30,13 +30,14 @@
             </thead>
             <tbody id="listaTemas">
                 <tr data-id="id0">
-                    <td>Ideas para crear un foro sin morir en el intento ─ Por: Yo mera >__< </td>
-                    <td>5</td>
+                    <td>Ideas para crear un foro sin morir en el intento ─ Por: Yo mera >__
+                        < </td>
+                            <td>5</td>
                 </tr>
             </tbody>
         </table>
     </main>
-    
+
     <!-- Modal Crear Tema-->
     <div class="modal fade" id="modalTemaNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -63,11 +64,42 @@
         </div>
     </div>
 
+    <!-- Modal Búsqueda-->
+    <div class="modal fade" id="modalBusqueda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form id="formTemaNuevo">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Tema nuevo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-striped">
+                            <thead class="t-morado">
+                                <th>Tema</th>
+                                <th>Respuestas</th>
+                            </thead>
+                            <tbody id="temasFiltrados">
+                                <!--<tr data-id="id0">
+                                    <td><a href="">Ideas para crear un foro sin morir en el intento ─ Por: Yo mera >__<</a></td>
+                                    <td>5</td>
+                                </tr>-->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>

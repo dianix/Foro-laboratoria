@@ -29,8 +29,12 @@ var armarTema = function (tema) {
     //creando fila para tema
     var $temaFila = $("<tr />").attr("data-id", id);
     //creando celdas para datos
+    var $contenidoA = $("<a />").attr("href","verTopic.html?topic_id="+id);
+    $contenidoA.text(contenido);
+    //console.log($contenidoA)
     var $temaContenido = $("<td />");
-    $temaContenido.text(contenido + " ─ Por: " + autor);
+    $temaContenido.append($contenidoA);
+    $temaContenido.append(" ─ Por: " + autor);
     var $temaRespuestas = $("<td />");
     $temaRespuestas.text(respuestas);
     //agregando datos a fila de tema y fila a contenedor html
@@ -55,17 +59,35 @@ var agregarTema = function (e) {
     });
 };
 
+var plantillaFiltrados ='<tr data-id="__idTema__">'+
+                            '<td><a href="verTopic.html?topic_id=__id__">__contenido__ ─ Por: __autor__</a></td>'+
+                            '<td>__respuestas__</td>'+
+                        '</tr>';
+
 var filtrarTemas = function (e) {
     e.preventDefault();
     //obtener tema a buscar
     var temaBusqueda = $("#temaBusqueda").val().toLowerCase();
     //obtener temas
     $.getJSON(api.url, function (temas) {
-        var temasFiltrados = temas.filter(function(tema){
+        var temasFiltrados = temas.filter(function (tema) {
             return tema.content.toLowerCase().indexOf(temaBusqueda) >= 0;
         });
-        console.log(temasFiltrados);
+        //console.log(temasFiltrados);
+        mostrarResultados(temasFiltrados);
     });
-}
+};
+
+var mostrarResultados = function(resultados){
+    console.log(resultados.id)
+    var resultadoBusqueda = $("#modalBusqueda")
+    plantillaFinal = "";
+    plantillaFinal += plantillaFiltrados.replace("__idTema__",resultados.id)
+    .replace("__id__",resultados.id)
+    .replace("__contenido__",resultados.content)
+    .replace("__autor__",resultados.author_name)
+    .replace("__respuestas__",resultados.responses_count);
+    resultadoBusqueda.html(plantillaFinal);
+};
 
 $(document).ready(cargarPagina);
