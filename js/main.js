@@ -73,13 +73,13 @@ var filtrarTemas = function (e) {
         var temasFiltrados = temas.filter(function (tema) {
             return tema.content.toLowerCase().indexOf(temaBusqueda) >= 0;
         });
-        //console.log(temasFiltrados);
+        console.log(temasFiltrados);
         mostrarResultados(temasFiltrados);
     });
 };
 
 var mostrarResultados = function(resultados){
-    console.log(resultados.id)
+    //console.log(resultados.id)
     var resultadoBusqueda = $("#modalBusqueda")
     plantillaFinal = "";
     plantillaFinal += plantillaFiltrados.replace("__idTema__",resultados.id)
