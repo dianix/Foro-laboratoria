@@ -1,5 +1,5 @@
 var api = {
-    url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics'
+    url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics'
 };
 
 var $contenedorTemas = $("#listaTemas");
