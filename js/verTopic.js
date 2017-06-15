@@ -4,7 +4,7 @@ var topicId = getParameterByName('topic_id');
   alert("El topic ID es:"+topicId);
 }*/
 var api = {
-    url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics'
+    url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics/'
 };
 
 var cargarPagina = function () {
@@ -13,11 +13,11 @@ var cargarPagina = function () {
 
 var cargarTema = function () {
     //obteniendo tema de la api
-    console.log(topicId)
-    /*$.getJSON(api.url, function (temas) {
-        //temas.forEach(obtenerContenidos);
-        temas.forEach(armarTema);
-    });*/
+    //console.log(topicId)
+    var apiTema = api.url + topicId;
+    $.getJSON(apiTema, function (tema) {
+        console.log(tema)
+    });
 }
 
 
