@@ -1,20 +1,73 @@
-<!-- mostrar en este HTML los TOPICS de /topics -->
-
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
 
-    <h1>Aqui van todos los temas</h1>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foro Ta Shido tu Koto</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-inverse bg-primary">
+        <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro taShidotuKoto</a>
+    </nav>
+
+    <main class="container center">
+        <h1 class="text-center t-morado"><b>Estos son todos los temas</b></h1>
+        <!-- Botón para llamar al modal de nuevo tema -->
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTemaNuevo">
+          Nuevo Tema
+        </button>
+        <table class="table table-striped">
+            <thead class="t-morado">
+                <th>Tema</th>
+                <th>Respuestas</th>
+            </thead>
+            <tbody id="listaTemas">
+                <tr data-id="id0">
+                    <td>10 deas para crear un foro sin morir en el intento - Por: Yo mera</td>
+                    <td>5</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
     
+    <!-- Modal Crear Tema-->
+    <div class="modal fade" id="modalTemaNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form id="formTemaNuevo">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Tema nuevo</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="tema-autor">Autor</label>
+                            <input type="text" class="form-control" id="tema-autor" placeholder="Autor">
+                            <label for="tema-contenido">Tema</label>
+                            <input type="text" class="form-control" id="tema-contenido" placeholder="Contenido">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Crear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/main.js"></script>
-    
-  </body>
+</body>
+
 </html>

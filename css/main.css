@@ -1,0 +1,13 @@
+nav.navbar.fixed-top {
+    border-radius: 0;
+    background-color: #5c268e;
+    
+}
+
+nav.navbar.fixed-top a {
+    color:#d38bff;
+}
+
+.t-morado {
+    color: #42116f;
+}
