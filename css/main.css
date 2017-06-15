@@ -8,6 +8,10 @@ nav.navbar.fixed-top a {
     color:#d38bff;
 }
 
+form#filtrarTemas {
+    margin: .5em 1em 0 0;
+}
+
 .t-morado {
     color: #42116f;
 }

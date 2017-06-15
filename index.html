@@ -10,10 +10,13 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-inverse bg-primary">
-        <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro taShidotuKoto</a>
-    </nav>
-
+<nav class="navbar fixed-top navbar-inverse bg-primary">
+    <a class="navbar-brand" href="index.html"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro taShidotuKoto</a>
+    <form id="filtrarTemas" class="form-inline pull-right">
+        <input id="temaBusqueda" class="form-control mr-sm-2" type="text" placeholder="Buscar Tema">
+        <button class="btn btn-info my-2 my-sm-0" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+    </form>
+</nav>
     <main class="container center">
         <h1 class="text-center t-morado"><b>Estos son todos los temas</b></h1>
         <!-- Botón para llamar al modal de nuevo tema -->
@@ -27,7 +30,7 @@
             </thead>
             <tbody id="listaTemas">
                 <tr data-id="id0">
-                    <td>10 deas para crear un foro sin morir en el intento - Por: Yo mera</td>
+                    <td>Ideas para crear un foro sin morir en el intento ─ Por: Yo mera >__< </td>
                     <td>5</td>
                 </tr>
             </tbody>
