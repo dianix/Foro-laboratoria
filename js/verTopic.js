@@ -4,7 +4,7 @@ var topicId = getParameterByName('topic_id');
   alert("El topic ID es:"+topicId);
 }*/
 var api = {
-    url: 'http://examen-laboratoria-sprint-5.herokuapp.com/topics/'
+    url: 'https://examen-laboratoria-sprint-5.herokuapp.com/topics/'
 };
 var apiTema = api.url + topicId;
 
