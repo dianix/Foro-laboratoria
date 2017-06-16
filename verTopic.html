@@ -17,11 +17,44 @@
     </nav>
     <main id="detalleTema" class="container">
         <h1 class="text-center t-morado">Detalles del Tema</h1>
-        <h3>Tema</h3>
-        <h4>Por: Mi</h4>
-        <h3>Respuestas</h3>
-        <h4>Respuesta1</h4>
+        <h3 id="contenido"></h3>
+        <h4 id="autor"></h4>
+        <h4 id="fecha"></h4>
+        <h3 class="t-morado">Respuestas</h3>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalTemaNuevo">
+            Nueva Respuesta
+        </button>
+        <div id="listaRespuestas">
+            <!--<h4>Respuesta ejemplo1</h4>
+            <h6>autor</h6>
+            <h6>fecha</h6>-->
+        </div>
     </main>
+    <!-- Modal Crear Respuesta-->
+    <div class="modal fade" id="modalTemaNuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <form id="formTemaNuevo">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Respuesta nueva</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="tema-autor">Autor</label>
+                            <input type="text" class="form-control" id="tema-autor" placeholder="Autor">
+                            <label for="tema-contenido">Respuesta</label>
+                            <input type="text" class="form-control" id="tema-contenido" placeholder="Contenido">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Publicar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
 
@@ -36,7 +69,7 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/verTopic.js"></script>

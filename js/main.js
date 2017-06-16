@@ -39,7 +39,7 @@ var armarTema = function (tema) {
     $temaRespuestas.text(respuestas);
     //agregando datos a fila de tema y fila a contenedor html
     $temaFila.append($temaContenido).append($temaRespuestas);
-    $contenedorTemas.append($temaFila);
+    $contenedorTemas.prepend($temaFila);
 };
 
 var agregarTema = function (e) {
